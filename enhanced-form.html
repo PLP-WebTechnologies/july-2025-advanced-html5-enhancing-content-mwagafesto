@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced HTML5 Content & Forms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f8f8;
+        }
+        header, main, footer {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 6px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        form {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        fieldset {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #bbb;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #4CAF50;
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .media-section img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>HTML5 Advanced Content & Form Demo</h1>
+    <p>This page demonstrates the use of lists, tables, media, and HTML5 forms with native validation.</p>
+</header>
+
+<main>
+    <!-- Lists Section -->
+    <section>
+        <h2>Top 5 Web Development Skills</h2>
+        <ul>
+            <li>Semantic HTML & Accessibility</li>
+            <li>CSS Styling & Layout</li>
+            <li>JavaScript Fundamentals</li>
+            <li>Responsive Design</li>
+            <li>Version Control with Git</li>
+        </ul>
+    </section>
+
+    <!-- Table Section -->
+    <section>
+        <h2>HTML5 Input Types Overview</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Input Type</th>
+                    <th>Purpose</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>text</td>
+                    <td>General text input</td>
+                    <td><input type="text" placeholder="Your name"></td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>Accepts a valid email format</td>
+                    <td><input type="email" placeholder="you@example.com"></td>
+                </tr>
+                <tr>
+                    <td>date</td>
+                    <td>Pick a date from a calendar</td>
+                    <td><input type="date"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Media Section -->
+    <section class="media-section">
+        <h2>Sample Media Content</h2>
+        <img src="https://via.placeholder.com/800x300?text=HTML5+Media+Example" alt="Sample HTML5 Media">
+        <h3>Listen to Audio</h3>
+        <audio controls>
+            <source src="sample-audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <h3>Watch a Video</h3>
+        <video controls width="100%">
+            <source src="sample-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- HTML5 Form Section -->
+    <section>
+        <h2>Registration Form</h2>
+        <form action="#" method="post" novalidate>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required minlength="3" placeholder="Enter your full name">
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com">
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Account Details</legend>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required minlength="5" pattern="[A-Za-z0-9]+" placeholder="Only letters & numbers">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required minlength="6">
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required minlength="6">
+
+                <label for="role">User Role:</label>
+                <select id="role" name="role" required>
+                    <option value="">--Select--</option>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preferences</legend>
+                <label>
+                    <input type="checkbox" name="subscribe" value="yes" checked>
+                    Subscribe to newsletter
+                </label>
+                <label>
+                    <input type="radio" name="contact-method" value="email" required>
+                    Contact me via Email
+                </label>
+                <label>
+                    <input type="radio" name="contact-method" value="phone" required>
+                    Contact me via Phone
+                </label>
+
+                <label for="bio">Short Bio:</label>
+                <textarea id="bio" name="bio" rows="4" placeholder="Tell us something about yourself..."></textarea>
+            </fieldset>
+
+            <button type="submit">Register</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 HTML5 Assignment | Designed by Student</p>
+</footer>
+
+</body>
+</html>
